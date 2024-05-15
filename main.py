@@ -1,7 +1,7 @@
 import requests
 import numpy as np
 import logging
-
+import time
 # Configure logging
 logging.basicConfig(level=logging.DEBUG, format='%(asctime)s - %(levelname)s - %(message)s')
 
@@ -17,6 +17,7 @@ def fetch_historical_data(pair, interval='1h', limit=50):
             return None
     except requests.exceptions.RequestException as e:
         logging.error(f"Error fetching data for {pair}: {e}")
+        time.sleep(60)
         return None
 
 def calculate_volatility_to_close_percentage(data):
