@@ -14,7 +14,7 @@ def background_task():
         top_pairs = select_top_pairs_with_highest_volatility(pairs)
         cached_data = top_pairs
         print("Data refreshed.")
-        time.sleep(600)  # Sleep for 20 minutes (20 minutes * 60 seconds) --> 10m
+        time.sleep(10)  # Sleep for 20 minutes (20 minutes * 60 seconds) --> 10m
 
 @app.route('/')
 def index():
