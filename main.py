@@ -33,7 +33,6 @@ def select_top_pairs_with_highest_volatility(pairs, top_n=10):
         if historical_data and len(historical_data) >= 50:  # Ensure enough data points for calculation
             volatility = calculate_volatility_to_close_percentage(historical_data)
             pairs_with_volatility.append((pair, volatility))
-            break
 
     pairs_with_volatility.sort(key=lambda x: x[1], reverse=True)  # Sort pairs by volatility
     return pairs_with_volatility[:top_n]
